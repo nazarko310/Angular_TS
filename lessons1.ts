@@ -76,4 +76,72 @@ employeeOnTheWork({
 })
 
 
+// создать класс юзера с полями name, age, city, status
+// и методами:
+// getName
+// setName
+// getAge
+// setAge
+// getCity
+// setCity
+// changeStatus
+
+
+class User {
+    private name: string
+    private age: number
+    private city: string
+    private status: boolean
+
+    constructor(name: string, age: number, city: string, status: boolean) {
+        this.name = name;
+        this.age = age;
+        this.city = city;
+        this.status = status;
+    }
+
+    getName() {
+        return this.name
+    }
+
+    setName(newName: string) {
+        if (!newName) {
+            return 'Error'
+        }
+        this.name = newName
+    }
+
+    getAge() {
+        return this.age
+    }
+
+    setAge(newAge: number) {
+        if (newAge < this.age && newAge < 0) {
+            return 'Error'
+        }
+        this.age = newAge
+    }
+
+    getCity() {
+        return this.city
+    }
+
+    setCity(newCity) {
+        if (!newCity) {
+            return 'Error'
+        }
+        this.city = newCity
+    }
+
+    chageStatus(newStatus: boolean) {
+        this.status = newStatus
+    }
+}
+
+let user = new User('Vasia', 15, 'Rivne', true);
+user.setAge(20);
+user.chageStatus(false)
+console.log(user);
+
+
 
