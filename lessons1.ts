@@ -121,3 +121,99 @@ let schools: School[] = [
 let competition = schools[0] as SchoolOfMath;
 
 console.log(competition.competitions);
+
+
+class Users {
+    name: string
+    private age: number
+
+    ageGrow(newAge) {
+        if (newAge > 0 && newAge < 100 && newAge != this.age) {
+            this.age = newAge
+        }
+    }
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+let user = new Users('Vasia', 15);
+user.ageGrow(20);
+console.log(user);
+
+
+interface Computer {
+    CPU: string,
+    OZU: number,
+}
+
+class Laptop implements Computer {
+    CPU: string;
+    OZU: number;
+    private batteryPower: number
+
+
+    constructor(CPU: string, OZU: number, batteryPower: number) {
+        this.CPU = CPU;
+        this.OZU = OZU;
+        this.batteryPower = batteryPower;
+    }
+
+    batteryPowerImprove(batteryImprove) {
+        if (batteryImprove > this.batteryPower && batteryImprove > 20000)
+            this.batteryPower = batteryImprove
+    }
+}
+
+class PC implements Computer {
+    constructor(CPU: string, OZU: number, game: boolean) {
+        this.CPU = CPU;
+        this.OZU = OZU;
+        this.game = game;
+    }
+
+    CPU: string;
+    OZU: number;
+    game: boolean
+}
+
+
+let computers: Computer[] = [
+    new Laptop('Intel', 8, 20000),
+    new PC('AMD', 16, true)
+
+]
+
+let laptop = computers[0] as Laptop
+laptop.batteryPowerImprove(30000)
+console.log(laptop);
+
+
+enum Gender {
+    MALE = 'male',
+    FEMALE = 'female'
+}
+
+
+function genderSet(gender: Gender) {
+    console.log(gender)
+}
+
+genderSet(Gender.MALE)
+
+
+enum Size {
+    S = 'S',
+    M = 'M',
+    L = 'L'
+}
+
+
+function sizeOfClothes(sizeOfClothe: Size) {
+    console.log(sizeOfClothe)
+}
+
+
+sizeOfClothes(Size.S)
