@@ -76,3 +76,47 @@ var user = new User('Vasia', 15, 'Rivne', true);
 user.setAge(20);
 user.chageStatus(false);
 console.log(user);
+var Cat = /** @class */ (function () {
+    function Cat(go, run, speak, swim) {
+        this.go = go;
+        this.run = run;
+        this.speak = speak;
+        this.swim = swim;
+    }
+    Cat.prototype.info = function (info) {
+        return this.go + ", " + this.run + ", " + this.swim + ", " + this.speak;
+    };
+    ;
+    return Cat;
+}());
+var Bird = /** @class */ (function () {
+    function Bird(go, run, speak, swim) {
+        this.go = go;
+        this.run = run;
+        this.speak = speak;
+        this.swim = swim;
+    }
+    Bird.prototype.info = function (info) {
+        return this.run + ", " + this.speak;
+    };
+    return Bird;
+}());
+var Fish = /** @class */ (function () {
+    function Fish(go, run, speak, swim) {
+        this.go = go;
+        this.run = run;
+        this.speak = speak;
+        this.swim = swim;
+    }
+    Fish.prototype.info = function (info) {
+        return "" + this.swim;
+    };
+    return Fish;
+}());
+var animal = [
+    new Cat('Go', 'Run', 'May', 'Swim'),
+    new Fish('NoGo', 'NoRun', 'NoSpeak', 'Swim'),
+    new Bird('NoGo', 'CanFly', 'CanSing', 'NoSwim')
+];
+var fish = animal[1];
+console.log(fish.info(''));

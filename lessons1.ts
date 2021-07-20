@@ -143,5 +143,87 @@ user.setAge(20);
 user.chageStatus(false)
 console.log(user);
 
+// написать интерфейс Animal который описывает:
+// тип движения животного(плавает, ходит, бегает) типа стринг
+// что говорит тип стринг
+// и функцию которая возвращает информацию о животном
+// создать три класса Cat, Bird, Fish и имплементировать для каждого интерфейс Animal
+
+interface Animal {
+    swim: string,
+    go: string,
+    run: string,
+    speak: string
+    info: (info: string) => string
+}
 
 
+class Cat implements Animal {
+
+    go: string;
+    run: string;
+    speak: string;
+    swim: string;
+
+    info(info: string): string {
+        return `${this.go}, ${this.run}, ${this.swim}, ${this.speak}`
+    };
+
+    constructor(go: string, run: string, speak: string, swim: string) {
+        this.go = go;
+        this.run = run;
+        this.speak = speak;
+        this.swim = swim;
+    }
+
+}
+
+
+class Bird implements Animal {
+
+    go: string;
+    run: string;
+    speak: string;
+    swim: string;
+
+    info(info: string): string {
+        return `${this.run}, ${this.speak}`
+    }
+
+    constructor(go: string, run: string, speak: string, swim: string) {
+        this.go = go;
+        this.run = run;
+        this.speak = speak;
+        this.swim = swim;
+    }
+
+
+}
+
+class Fish implements Animal {
+    go: string;
+    run: string;
+    speak: string;
+    swim: string;
+
+    info(info: string): string {
+        return `${this.swim}`
+    }
+
+    constructor(go: string, run: string, speak: string, swim: string) {
+        this.go = go;
+        this.run = run;
+        this.speak = speak;
+        this.swim = swim;
+    }
+}
+
+let animal: Animal[] = [
+    new Cat('Go', 'Run', 'May', 'Swim'),
+    new Fish('NoGo', 'NoRun', 'NoSpeak', 'Swim'),
+    new Bird('NoGo', 'CanFly', 'CanSing', 'NoSwim')
+]
+
+
+let fish = animal[1] as Fish
+console.log(fish.info(''));
